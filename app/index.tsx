@@ -7,13 +7,11 @@ import { RootStackParamList } from "./types/Types";
 
 const Stack = createStackNavigator<RootStackParamList>();
 
-export default function App() {
+export default function Index() {
     return (
-        <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home">
-                <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen name="AddTask" component={AddTaskScreen} />
-            </Stack.Navigator>
-        </NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="AddTask" component={AddTaskScreen} />
+        </Stack.Navigator>
     );
 }

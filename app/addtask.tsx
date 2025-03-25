@@ -36,7 +36,7 @@ const AddTaskScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f4f4f4', // Soft background color for the whole screen
+    backgroundColor: '#f4f4f4',
     padding: 20,
   },
   input: {
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     paddingLeft: 15,
     marginBottom: 20,
     fontSize: 16,
-    backgroundColor: '#fff', // White background for the input field
+    backgroundColor: '#fff',
   },
 });
 

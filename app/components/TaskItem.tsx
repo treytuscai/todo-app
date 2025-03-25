@@ -12,7 +12,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggle, onDelete }) => {
     <TouchableOpacity onPress={() => onToggle(task.id)} style={styles.task}>
       <Text style={[styles.text, task.completed && styles.completed]}>{task.title}</Text>
       <TouchableOpacity onPress={() => onDelete(task.id)}>
-        <Text style={styles.delete}>🗑</Text>
+        <Text style={styles.delete}>X</Text>
       </TouchableOpacity>
     </TouchableOpacity>
   );

@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { View, Button, FlatList, StyleSheet } from 'react-native';
+import { View, FlatList, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useRouter, useFocusEffect } from 'expo-router';
 import TaskItem from './components/TaskItem';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -41,18 +41,54 @@ const HomeScreen = () => {
             <FlatList
                 data={tasks}
                 keyExtractor={item => item.id}
-                renderItem={({ item }) => <TaskItem task={item} onToggle={toggleTask} onDelete={deleteTask} />}
+                renderItem={({ item }) => (
+                    <TaskItem
+                        task={item}
+                        onToggle={toggleTask}
+                        onDelete={deleteTask}
+                        style={styles.taskItem}
+                    />
+                )}
+                contentContainerStyle={styles.taskList}
             />
-            <Button
-                title="Add Task"
+
+            <TouchableOpacity
+                style={styles.addButton}
                 onPress={() => router.push({ pathname: '/addtask', params: { tasks: JSON.stringify(tasks) } })}
-            />
+            >
+                <Text style={styles.addButtonText}>+ Add Task</Text>
+            </TouchableOpacity>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    container: { flex: 1, padding: 10 }
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        padding: 20,
+    },
+    taskList: {
+        paddingBottom: 20,
+    },
+    addButton: {
+        backgroundColor: '#5cb85c',
+        borderRadius: 50,
+        paddingVertical: 12,
+        paddingHorizontal: 40,
+        alignSelf: 'center',
+        marginTop: 20,
+        shadowColor: '#000',
+        shadowOpacity: 0.1,
+        shadowOffset: { width: 0, height: 4 },
+        shadowRadius: 8,
+        elevation: 5,
+    },
+    addButtonText: {
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
 });
 
 export default HomeScreen;

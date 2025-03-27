@@ -30,7 +30,7 @@ describe('AddTaskScreen', () => {
 
     expect(getByPlaceholderText('Enter Task')).toBeTruthy();
     expect(getByPlaceholderText('Enter Section/Category')).toBeTruthy();
-    expect(getByText('Add Task')).toBeTruthy();
+    expect(getByText('+ Add Task')).toBeTruthy();
   });
 
   it('updates task input when user types', () => {

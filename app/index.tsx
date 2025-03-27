@@ -51,13 +51,14 @@ const HomeScreen = () => {
                 )}
                 contentContainerStyle={styles.taskList}
             />
-
-            <TouchableOpacity
-                style={styles.addButton}
-                onPress={() => router.push({ pathname: '/addtask', params: { tasks: JSON.stringify(tasks) } })}
-            >
-                <Text style={styles.addButtonText}>+ Add Task</Text>
-            </TouchableOpacity>
+            <View style={styles.footer}>
+                <TouchableOpacity
+                    style={styles.addButton}
+                    onPress={() => router.push({ pathname: '/addtask', params: { tasks: JSON.stringify(tasks) } })}
+                >
+                    <Text style={styles.addButtonText}>+ Add Task</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     );
 };
@@ -67,25 +68,35 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#f4f4f4',
         padding: 20,
+        paddingBottom: 100,
     },
     taskList: {
         paddingBottom: 20,
     },
-    addButton: {
+    footer: {
         backgroundColor: '#5cb85c',
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: 100,
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    },
+    addButton: {
+        backgroundColor: '#fff',
         borderRadius: 50,
         paddingVertical: 12,
         paddingHorizontal: 40,
-        alignSelf: 'center',
-        marginTop: 20,
         shadowColor: '#000',
         shadowOpacity: 0.1,
         shadowOffset: { width: 0, height: 4 },
         shadowRadius: 8,
         elevation: 5,
+        marginTop: 20,
     },
     addButtonText: {
-        color: '#fff',
+        color: '#5cb85c', // Green text to match theme
         fontSize: 18,
         fontWeight: 'bold',
     },

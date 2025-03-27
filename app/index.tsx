@@ -88,21 +88,18 @@ const HomeScreen = () => {
                     const isCollapsed = collapsedSections[title] !== undefined ? collapsedSections[title] : true;
                     return (
                         <TouchableOpacity
-                            style={styles.sectionHeaderContainer}
-                            onPress={() => toggleSection(title)}
-                        >
+                            style= {styles.sectionHeaderContainer}
+                            onPress={() => toggleSection(title)}>
                             <Text style={styles.arrow}>{isCollapsed ? "▲" : "▼"}</Text>
                             <Text style={styles.sectionHeader}>{title}</Text>
                         </TouchableOpacity>
                     );
                 }}
-                contentContainerStyle={styles.taskList}
-            />
+                stickySectionHeadersEnabled/>
             <View style={styles.footer}>
                 <TouchableOpacity
                     style={styles.addButton}
-                    onPress={() => router.push({ pathname: '/addtask', params: { tasks: JSON.stringify(tasks) } })}
-                >
+                    onPress={() => router.push({ pathname: '/addtask', params: { tasks: JSON.stringify(tasks) } })}>
                     <Text style={styles.addButtonText}>+ Add Task</Text>
                 </TouchableOpacity>
             </View>
@@ -127,6 +124,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 16,
         borderRadius: 8,
         marginTop: 16,
+        marginBottom: 0,
         marginHorizontal: 16,
         shadowColor: "#000",
         shadowOpacity: 0.05,
@@ -165,7 +163,7 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 4 },
         shadowRadius: 8,
         elevation: 5,
-        marginTop: 20,
+        marginTop: 10,
     },
     addButtonText: {
         color: "#5cb85c",

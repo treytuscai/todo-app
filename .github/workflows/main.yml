@@ -20,18 +20,9 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: |
-          npm install
+          npm ci
 
       # Step 4: Run tests with Jest
       - name: Run tests
         run: |
-          npm test
-
-      # Optional Step: Cache node_modules for faster subsequent builds
-      - name: Cache node modules
-        uses: actions/cache@v4
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          CI=true npm test

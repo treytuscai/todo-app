@@ -33,16 +33,16 @@ const HomeScreen = () => {
     const [collapsedSections, setCollapsedSections] = useState<{ [key: string]: boolean }>({});
     const router = useRouter();
 
+    const loadTasks = async () => {
+        const savedTasks = await AsyncStorage.getItem('tasks');
+        if (savedTasks) setTasks(JSON.parse(savedTasks));
+    };
+
     useFocusEffect(
         useCallback(() => {
             loadTasks();
         }, [])
     );
-
-    const loadTasks = async () => {
-        const savedTasks = await AsyncStorage.getItem('tasks');
-        if (savedTasks) setTasks(JSON.parse(savedTasks));
-    };
 
     const saveTasks = async (updatedTasks: Task[]) => {
         setTasks(updatedTasks);

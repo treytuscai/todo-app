@@ -11,7 +11,7 @@ A simple Todo app built with React Native and Expo. Allows users to add, delete,
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/todo-app.git
+   git clone https://github.com/treytuscai/todo-app.git
    cd todo-app
    ```
 2. Install dependencies:

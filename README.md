@@ -1,6 +1,6 @@
 # React Native Todo App
 
-A simple Todo app built with React Native and Expo. Allows users to add, delete, and mark tasks as completed, organized into sections.
+A simple todo app built with React Native and Expo. Allows users to add, delete, and mark tasks as completed, organized into sections.
 
 ## Features
 - Add, delete, and complete tasks.
